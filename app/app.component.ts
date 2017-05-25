@@ -10,7 +10,7 @@ import { Conten } from "./app.interface";
     //encapsulation: ViewEncapsulation.None
  })
  export class AppComponent {
-     val:string[]=["welcome to the world of angular 2"];
+     val:string[]=["Welcome to the world of angular 2"];
      
      Contents = ['models' , 'components' , 'directives' , 'interfaces'];
      cont : Conten;

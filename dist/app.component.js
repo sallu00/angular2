@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.val = ["welcome to the world of angular 2"];
+        this.val = ["Welcome to the world of angular 2"];
         this.Contents = ['models', 'components', 'directives', 'interfaces'];
     }
     AppComponent.prototype.valuelelo = function (event) {
