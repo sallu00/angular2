@@ -1,0 +1,34 @@
+<h1 id="heading">Using Form Builder with validations</h1>
+<hr style="width:50%;">
+<form [formGroup]="myForm" (ngSubmit)=submitVal(myForm.value) >
+    <div class="form-group" >
+        <input id="a" type="text" name="firstName" minlength="4" pattern="[a-zA-Z ]*" [formControl]="myForm.controls['firstName']" placeholder="first name"  class="form-control" required/>
+        <div class="error" *ngIf="myForm.controls['firstName'].hasError('required') &&  myForm.controls['firstName'].touched">This field is required </div>
+        <div class="error" *ngIf="myForm.controls['firstName'].hasError('minlength') &&  myForm.controls['firstName'].dirty && !myForm.controls['firstName'].hasError('pattern')">minimum length should be 4 characters</div>
+        <div class="error" *ngIf="myForm.controls['firstName'].hasError('pattern') &&  myForm.controls['firstName'].dirty">should contain only characters</div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="lastName" minlength="4" pattern="[a-zA-Z ]*" [formControl]="myForm.controls['lastName']" placeholder="last name"  class="form-control" required/>
+        <div class="error" *ngIf="myForm.controls['lastName'].hasError('required') &&  myForm.controls['lastName'].touched">This field is required </div>
+        <div class="error" *ngIf="myForm.controls['lastName'].hasError('minlength') &&  myForm.controls['lastName'].dirty && !myForm.controls['lastName'].hasError('pattern')">minimum length should be 4 characters</div>
+        <div class="error" *ngIf="myForm.controls['lastName'].hasError('pattern') &&  myForm.controls['lastName'].dirty">should contain only characters</div>
+    </div>
+    <div class="radio">
+        <label>
+          <input type="radio" name="gender" [formControl]="myForm.controls['gender']"required value="Male" >
+          Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" [formControl]="myForm.controls['gender']" required value="Female" >
+          Female
+        </label>
+      </div>
+    <div class="form-group">
+        <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{2,4}$" [formControl]="myForm.controls['email']" placeholder="enter email id"  required class="form-control" />
+        <div class="error" *ngIf="myForm.controls['email'].hasError('required') &&  myForm.controls['email'].touched">This field is required </div>
+        <div class="error" *ngIf="myForm.controls['email'].hasError('pattern') &&  myForm.controls['email'].dirty">should contain only special symbols (_ , % , + , -)</div>
+    </div>
+    <input id="button" [disabled]="myForm.invalid" type="submit" value="Submit" class="btn btn-primary" />
+</form>

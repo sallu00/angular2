@@ -1,0 +1,7 @@
+.error{
+    text-align: center;
+    color: red;
+}
+.has-error #a{
+    border-collapse: red;
+}

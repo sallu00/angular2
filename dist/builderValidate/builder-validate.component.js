@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var usingFormBuilderComponent = (function () {
-    function usingFormBuilderComponent(fb) {
+var builderValidateComponent = (function () {
+    function builderValidateComponent(fb) {
         this.myForm = fb.group({
             'firstName': '',
             'lastName': '',
@@ -20,18 +20,18 @@ var usingFormBuilderComponent = (function () {
             'email': ''
         });
     }
-    usingFormBuilderComponent.prototype.submitVal = function (form) {
+    builderValidateComponent.prototype.submitVal = function (form) {
         console.log(form);
     };
-    return usingFormBuilderComponent;
+    return builderValidateComponent;
 }());
-usingFormBuilderComponent = __decorate([
+builderValidateComponent = __decorate([
     core_1.Component({
-        selector: 'using-form-builder',
-        templateUrl: "./app/usingFormBuilder/using-form-builder.component.html",
-        styleUrls: ['./app/usingFormBuilder/using-form-builder.component.css']
+        selector: 'builder-validate',
+        templateUrl: "./app/builderValidate/builder-validate.component.html",
+        styleUrls: ['./app/builderValidate/builder-validate.component.css']
     }),
     __metadata("design:paramtypes", [forms_1.FormBuilder])
-], usingFormBuilderComponent);
-exports.usingFormBuilderComponent = usingFormBuilderComponent;
-//# sourceMappingURL=using-form-builder.component.js.map
+], builderValidateComponent);
+exports.builderValidateComponent = builderValidateComponent;
+//# sourceMappingURL=builder-validate.component.js.map

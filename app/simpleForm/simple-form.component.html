@@ -9,18 +9,18 @@
     </div>
     <div class="radio">
         <label>
-          <input type="radio" name="gender" value="Male" ngModel>
+          <input type="radio" name="gender" required  value="Male" ngModel>
           Male
         </label>
       </div>
       <div class="radio">
         <label>
-          <input type="radio" name="gender" value="Female" ngModel>
+          <input type="radio" name="gender" required value="Female" ngModel>
           Female
         </label>
       </div>
     <div class="form-group">
         <input type="text" name="email" placeholder="enter email id" ngModel required class="form-control" />
     </div>
-    <input id="button" type="submit" value="Submit" class="btn btn-primary" />
+    <input id="button" [disabled]="f.invalid" type="submit" value="Submit" class="btn btn-primary" />
 </form>

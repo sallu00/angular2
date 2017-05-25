@@ -1,26 +1,26 @@
 <h1 id="heading">Using Form Builder</h1>
 <hr style="width:50%;">
-<form #f="ngForm" (ngSubmit)=submitVal(f.value) >
+<form [formGroup]="myForm" (ngSubmit)=submitVal(myForm.value) >
     <div class="form-group">
-        <input type="text" name="firstName" placeholder="first name" ngModel class="form-control" required/>
+        <input type="text" name="firstName" [formControl]="myForm.controls['firstName']" placeholder="first name"  class="form-control" required/>
     </div>
     <div class="form-group">
-        <input type="text" name="lastName" placeholder="last name" ngModel class="form-control" required/>
+        <input type="text" name="lastName" [formControl]="myForm.controls['lastName']" placeholder="last name"  class="form-control" required/>
     </div>
     <div class="radio">
         <label>
-          <input type="radio" name="gender" value="Male" ngModel>
+          <input type="radio" name="gender" [formControl]="myForm.controls['gender']" required value="Male" >
           Male
         </label>
       </div>
       <div class="radio">
         <label>
-          <input type="radio" name="gender" value="Female" ngModel>
+          <input type="radio" name="gender" [formControl]="myForm.controls['gender']" required value="Female" >
           Female
         </label>
       </div>
     <div class="form-group">
-        <input type="text" name="email" placeholder="enter email id" ngModel required class="form-control" />
+        <input type="text" name="email"  [formControl]="myForm.controls['email']" placeholder="enter email id"  required class="form-control" />
     </div>
-    <input id="button" type="submit" value="Submit" class="btn btn-primary" />
+    <input id="button" type="submit" [disabled]="myForm.invalid" value="Submit" class="btn btn-primary" />
 </form>
