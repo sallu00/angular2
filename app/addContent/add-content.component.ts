@@ -1,4 +1,4 @@
-import { Component , Output , EventEmitter } from "@angular/core" ;
+import { Component , Output , EventEmitter , ViewEncapsulation } from "@angular/core" ;
 import { Conten } from "../app.interface";
  @Component({
     selector:'add-content' , 
@@ -6,8 +6,8 @@ import { Conten } from "../app.interface";
     ,
     styleUrls : ['./app/addContent/add-content.component.css'] ,
     //encapsulation: ViewEncapsulation.Emulated//(default) style applies only to this component
-    //encapsulation: ViewEncapsulation.Native// , style applies to all the components
-    //encapsulation: ViewEncapsulation.None
+    //encapsulation: ViewEncapsulation.Native
+    encapsulation: ViewEncapsulation.None // , style applies to all the components
  })
  export class addContentComponent {
      @Output() AddContent = new EventEmitter();

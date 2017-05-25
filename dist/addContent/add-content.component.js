@@ -30,6 +30,9 @@ addContentComponent = __decorate([
         selector: 'add-content',
         templateUrl: "./app/addContent/add-content.component.html",
         styleUrls: ['./app/addContent/add-content.component.css'],
+        //encapsulation: ViewEncapsulation.Emulated//(default) style applies only to this component
+        //encapsulation: ViewEncapsulation.Native
+        encapsulation: core_1.ViewEncapsulation.None // , style applies to all the components
     })
 ], addContentComponent);
 exports.addContentComponent = addContentComponent;
