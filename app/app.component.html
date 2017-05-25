@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h1>{{val}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <contents [Content]="Contents"  (changeHeader)="valuelelo($event)"></contents> <!-- [ property binding ( from class to template ) ] and sending input to child component -->
+    </div>
+    <div class="col-md-8">
+        <description></description>
+        <add-content (AddContent)="valuele($event)"></add-content>
+    </div>
+</div>
+<hr>
+<!-- <alert type="success">
+  <strong>Well done!</strong> You successfully read this important alert message.
+</alert> -->

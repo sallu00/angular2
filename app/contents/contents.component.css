@@ -1,0 +1,19 @@
+ul{
+    list-style-type: none;
+    margin: 30px;
+    padding-left: 0px;
+    border: 1px solid grey;
+    border-radius:5px;
+}
+ul li{
+    padding:20px;
+    text-align: left;
+    font-size: 20px;
+    color: burlywood;
+}
+ul li:hover{
+    background-color:cadetblue;
+    text-decoration: none;
+    cursor:pointer;
+    color: #fff;
+}
