@@ -14,7 +14,7 @@ export class usingFormBuilderComponent {
         this.myForm=fb.group({
             'firstName' : '',
             'lastName' : '',
-            'gender' : '' ,
+            'gender1' : '' ,
             'email' : ''
         })
     }

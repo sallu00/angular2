@@ -1,3 +1,3 @@
 export interface Conten {
-    name :string ;
+    name: string ;
 }

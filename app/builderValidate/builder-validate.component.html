@@ -26,7 +26,7 @@
         </label>
       </div>
     <div class="form-group">
-        <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{2,4}$" [formControl]="myForm.controls['email']" placeholder="enter email id"  required class="form-control" />
+        <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [formControl]="myForm.controls['email']" placeholder="enter email id"  required class="form-control" />
         <div class="error" *ngIf="myForm.controls['email'].hasError('required') &&  myForm.controls['email'].touched">This field is required </div>
         <div class="error" *ngIf="myForm.controls['email'].hasError('pattern') &&  myForm.controls['email'].dirty">should contain only special symbols (_ , % , + , -)</div>
     </div>

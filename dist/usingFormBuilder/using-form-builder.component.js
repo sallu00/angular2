@@ -16,7 +16,7 @@ var usingFormBuilderComponent = (function () {
         this.myForm = fb.group({
             'firstName': '',
             'lastName': '',
-            'gender': '',
+            'gender1': '',
             'email': ''
         });
     }
