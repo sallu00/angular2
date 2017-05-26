@@ -16,6 +16,6 @@ import { Conten } from "../app.interface";
      submit(){
          this.add=this.content;
          this.AddContent.emit(this.add);
-         //this.content = "";
+         this.content = "";
      }
  }
