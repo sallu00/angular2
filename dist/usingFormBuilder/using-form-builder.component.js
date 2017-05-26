@@ -13,16 +13,14 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var usingFormBuilderComponent = (function () {
     function usingFormBuilderComponent(fb) {
-        this.flag = false;
         this.myForm = fb.group({
-            'firstName': ['', [forms_1.Validators.required, forms_1.Validators.minLength(3), forms_1.Validators.pattern('[a-zA-Z ]*')]],
-            'lastName': ['', [forms_1.Validators.required, forms_1.Validators.minLength(3), forms_1.Validators.pattern('[a-zA-Z ]*')]],
-            'gender1': ['', forms_1.Validators.required],
-            'email': ['', [forms_1.Validators.required, forms_1.Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]]
+            'firstName': '',
+            'lastName': '',
+            'gender': '',
+            'email': ''
         });
     }
     usingFormBuilderComponent.prototype.submitVal = function (form) {
-        this.flag = true;
         console.log(form);
     };
     return usingFormBuilderComponent;

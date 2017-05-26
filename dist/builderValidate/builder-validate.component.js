@@ -14,10 +14,10 @@ var forms_1 = require("@angular/forms");
 var builderValidateComponent = (function () {
     function builderValidateComponent(fb) {
         this.myForm = fb.group({
-            'firstName': ['', [forms_1.Validators.required, forms_1.Validators.minLength(3), , forms_1.Validators.pattern('[a-zA-Z ]*')]],
-            'lastName': ['', [forms_1.Validators.required, forms_1.Validators.minLength(3), , forms_1.Validators.pattern('[a-zA-Z ]*')]],
-            'gender': ['', forms_1.Validators.required],
-            'email': ['', [forms_1.Validators.required, forms_1.Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]]
+            'firstName': '',
+            'lastName': '',
+            'gender': '',
+            'email': ''
         });
     }
     builderValidateComponent.prototype.submitVal = function (form) {
@@ -29,8 +29,7 @@ builderValidateComponent = __decorate([
     core_1.Component({
         selector: 'builder-validate',
         templateUrl: "./app/builderValidate/builder-validate.component.html",
-        styleUrls: ['./app/builderValidate/builder-validate.component.css'],
-        encapsulation: core_1.ViewEncapsulation.None
+        styleUrls: ['./app/builderValidate/builder-validate.component.css']
     }),
     __metadata("design:paramtypes", [forms_1.FormBuilder])
 ], builderValidateComponent);
