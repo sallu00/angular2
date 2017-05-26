@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder , FormGroup , Validators} from "@angular/forms";
-import { Conten } from "..//app.interface";
+import { Conten } from "../../app.interface";
 @Component({
     selector: 'using-form-builder',
-    templateUrl: "./app/usingFormBuilder/using-form-builder.component.html", // give address according to the index.html file 
-    styleUrls: ['./app/usingFormBuilder/using-form-builder.component.css']
+    templateUrl: "./app/formsModule/usingFormBuilder/using-form-builder.component.html", // give address according to the index.html file 
+    styleUrls: ['./app/formsModule/usingFormBuilder/using-form-builder.component.css']
 })
 
 export class usingFormBuilderComponent {

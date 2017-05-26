@@ -1,35 +1,45 @@
 <h1 id="heading">Using Form Builder with validations</h1>
 <hr style="width:80%;">
-<form [formGroup]="myForm" (ngSubmit)=submitVal(myForm.value) >
-    <div class="form-group" >
+<form [formGroup]="myForm" (ngSubmit)=submitVal(myForm.value)>
+    <div class="form-group">
         <span class="error">*</span>
-        <input id="a" type="text" name="firstName" [formControl]="myForm.controls['firstName']" placeholder="first name"  class="form-control"/>
+        <input id="a" type="text" name="firstName" [formControl]="myForm.controls['firstName']" placeholder="first name" class="form-control"
+        />
         <div class="error" *ngIf="myForm.controls['firstName'].hasError('required') &&  myForm.controls['firstName'].touched">This field is required </div>
         <div class="error" *ngIf="myForm.controls['firstName'].hasError('minlength') &&  myForm.controls['firstName'].dirty && !myForm.controls['firstName'].hasError('pattern')">minimum length should be 3 characters</div>
         <div class="error" *ngIf="myForm.controls['firstName'].hasError('pattern') &&  myForm.controls['firstName'].dirty">should contain only characters</div>
     </div>
     <div class="form-group">
         <span class="error">*</span>
-        <input type="text" name="lastName" [formControl]="myForm.controls['lastName']" placeholder="last name"  class="form-control" />
+        <input type="text" name="lastName" [formControl]="myForm.controls['lastName']" placeholder="last name" class="form-control"
+        />
         <div class="error" *ngIf="myForm.controls['lastName'].hasError('required') &&  myForm.controls['lastName'].touched">This field is required </div>
         <div class="error" *ngIf="myForm.controls['lastName'].hasError('minlength') &&  myForm.controls['lastName'].dirty && !myForm.controls['lastName'].hasError('pattern')">minimum length should be 3 characters</div>
         <div class="error" *ngIf="myForm.controls['lastName'].hasError('pattern') &&  myForm.controls['lastName'].dirty">should contain only characters</div>
     </div>
-    <div class="radio">
+    <!--<div class="radio">
         <label>
           <input type="radio" name="gender" [formControl]="myForm.controls['gender']" value="Male" >
           Male
-        </label>
-      </div>
-      <div class="radio">
+        </label> &nbsp;
         <label>
           <input type="radio" name="gender" [formControl]="myForm.controls['gender']"  value="Female" >
           Female
         </label>
-      </div>
+    </div>-->
     <div class="form-group">
         <span class="error">*</span>
-        <input type="text" name="email" pattern="" [formControl]="myForm.controls['email']" placeholder="enter email id"  class="form-control" />
+        <select class="form-control" [formControl]="myForm.controls['gender']">
+            <option value="">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <div class="error" *ngIf="myForm.controls['gender'].hasError('required') &&  myForm.controls['gender'].touched">This field is required </div>
+    </div>
+    <div class="form-group">
+        <span class="error">*</span>
+        <input type="text" name="email" pattern="" [formControl]="myForm.controls['email']" placeholder="enter email id" class="form-control"
+        />
         <div class="error" *ngIf="myForm.controls['email'].hasError('required') &&  myForm.controls['email'].touched">This field is required </div>
         <div class="error" *ngIf="myForm.controls['email'].hasError('pattern') &&  myForm.controls['email'].dirty">should contain only special symbols (_ , % , + , -)</div>
     </div>
