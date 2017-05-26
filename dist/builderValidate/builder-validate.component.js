@@ -29,7 +29,8 @@ builderValidateComponent = __decorate([
     core_1.Component({
         selector: 'builder-validate',
         templateUrl: "./app/builderValidate/builder-validate.component.html",
-        styleUrls: ['./app/builderValidate/builder-validate.component.css']
+        styleUrls: ['./app/builderValidate/builder-validate.component.css'],
+        encapsulation: core_1.ViewEncapsulation.None
     }),
     __metadata("design:paramtypes", [forms_1.FormBuilder])
 ], builderValidateComponent);

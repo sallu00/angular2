@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component , ViewEncapsulation } from '@angular/core';
 import { FormBuilder , FormGroup , Validators } from "@angular/forms";
 import { Conten } from "..//app.interface";
 @Component({
     selector: 'builder-validate',
     templateUrl: "./app/builderValidate/builder-validate.component.html", // give address according to the index.html file 
-    styleUrls: ['./app/builderValidate/builder-validate.component.css']
+    styleUrls: ['./app/builderValidate/builder-validate.component.css'] ,
+    encapsulation : ViewEncapsulation.None
 })
 
 export class builderValidateComponent {

@@ -1,26 +1,43 @@
 <h1 id="heading">Using Form Builder</h1>
 <hr style="width:50%;">
-<form [formGroup]="myForm" (ngSubmit)=submitVal(myForm.value) >
+<form [formGroup]="myForm" (ngSubmit)=submitVal(myForm.value)>
     <div class="form-group">
-        <input type="text" name="firstName" [formControl]="myForm.controls['firstName']" placeholder="first name"  class="form-control" required/>
+        <span class="error">*</span>
+        <input type="text" name="firstName" [formControl]="myForm.controls['firstName']" placeholder="first name" class="form-control"
+            required/>
+        <div *ngIf="flag">
+            <div class="error" *ngIf="myForm.controls['firstName'].hasError('minlength') && !myForm.controls['firstName'].hasError('pattern')">minimum length should be 3 characters</div>
+            <div class="error" *ngIf="myForm.controls['firstName'].hasError('pattern') ">should contain only characters</div>
+        </div>
     </div>
     <div class="form-group">
-        <input type="text" name="lastName" [formControl]="myForm.controls['lastName']" placeholder="last name"  class="form-control" required/>
+        <span class="error">*</span>
+        <input type="text" name="lastName" [formControl]="myForm.controls['lastName']" placeholder="last name" class="form-control"
+            required/>
+        <div *ngIf="flag">
+            <div class="error" *ngIf="myForm.controls['lastName'].hasError('minlength') && !myForm.controls['lastName'].hasError('pattern')">minimum length should be 3 characters</div>
+            <div class="error" *ngIf="myForm.controls['lastName'].hasError('pattern')">should contain only characters</div>
+        </div>
     </div>
     <div class="radio">
         <label>
-          <input type="radio" name="gender1" [formControl]="myForm.controls['gender1']" required value="Male" >
+          <input type="radio" name="gender1" [formControl]="myForm.controls['gender1']" value="Male" >
           Male
         </label>
-      </div>
-      <div class="radio">
+    </div>
+    <div class="radio">
         <label>
-          <input type="radio" name="gender1" [formControl]="myForm.controls['gender1']" required value="Female" >
+          <input type="radio" name="gender1" [formControl]="myForm.controls['gender1']" value="Female" >
           Female
         </label>
-      </div>
-    <div class="form-group">
-        <input type="text" name="email"  [formControl]="myForm.controls['email']" placeholder="enter email id"  required class="form-control" />
     </div>
-    <input id="button" type="submit" [disabled]="myForm.invalid" value="Submit" class="btn btn-primary" />
+    <div class="form-group">
+        <span class="error">*</span>
+        <input type="text" name="email" [formControl]="myForm.controls['email']" placeholder="enter email id" class="form-control"
+        />
+        <div *ngIf="flag">
+            <div class="error" *ngIf="myForm.controls['email'].hasError('pattern')">should contain only special symbols (_ , % , + , -)</div>
+        </div>
+    </div>
+    <input id="button" type="submit" [disabled]="!myForm.controls['firstName'].dirty  || !myForm.controls['lastName'].dirty || !myForm.controls['email'].dirty " value="Submit" class="btn btn-primary" />
 </form>

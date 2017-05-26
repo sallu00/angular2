@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder , FormGroup } from "@angular/forms";
+import { FormBuilder , FormGroup , Validators} from "@angular/forms";
 import { Conten } from "..//app.interface";
 @Component({
     selector: 'using-form-builder',
@@ -10,15 +10,17 @@ import { Conten } from "..//app.interface";
 export class usingFormBuilderComponent {
 
     myForm : FormGroup;
+    flag : boolean=false;
     constructor(fb : FormBuilder){
         this.myForm=fb.group({
-            'firstName' : '',
-            'lastName' : '',
-            'gender1' : '' ,
-            'email' : ''
+            'firstName' : ['', [Validators.required , Validators.minLength(3) , Validators.pattern('[a-zA-Z ]*')] ],
+            'lastName' : ['', [Validators.required , Validators.minLength(3) , Validators.pattern('[a-zA-Z ]*')] ],
+            'gender1' : ['', Validators.required ] ,
+            'email' : ['', [Validators.required ,  Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')] ]
         })
     }
     submitVal(form : any){
+        this.flag=true;
         console.log(form);
     }
 }
