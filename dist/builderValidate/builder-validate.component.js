@@ -14,10 +14,10 @@ var forms_1 = require("@angular/forms");
 var builderValidateComponent = (function () {
     function builderValidateComponent(fb) {
         this.myForm = fb.group({
-            'firstName': '',
-            'lastName': '',
-            'gender': '',
-            'email': ''
+            'firstName': ['', [forms_1.Validators.required, forms_1.Validators.minLength(3), , forms_1.Validators.pattern('[a-zA-Z ]*')]],
+            'lastName': ['', [forms_1.Validators.required, forms_1.Validators.minLength(3), , forms_1.Validators.pattern('[a-zA-Z ]*')]],
+            'gender': ['', forms_1.Validators.required],
+            'email': ['', [forms_1.Validators.required, forms_1.Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]]
         });
     }
     builderValidateComponent.prototype.submitVal = function (form) {
