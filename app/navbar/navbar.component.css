@@ -1,0 +1,14 @@
+#navbar{
+    background-color: darkcyan;
+    border:none;
+}
+#name{
+    color: white;
+}
+#links{
+    color: white;
+}
+.navbar-default .navbar-nav>.active>#links {
+    background-color: white;
+    color: darkcyan;
+}

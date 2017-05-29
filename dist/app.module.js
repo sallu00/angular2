@@ -14,7 +14,16 @@ var contents_component_1 = require("./contents/contents.component");
 var description_component_1 = require("./description/description.component");
 var add_content_component_1 = require("./addcontent/add-content.component");
 var form_module_module_1 = require("./formsModule/form-module.module");
+var navbar_component_1 = require("./navbar/navbar.component");
+var router_1 = require("@angular/router");
+var simple_form_component_1 = require("./formsModule/simpleForm/simple-form.component");
 //import { AlertModule } from "@angular/ngx-bootstrap/alert";
+var routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: description_component_1.DescriptionComponent },
+    { path: 'forms', component: simple_form_component_1.simpleFormComponent },
+    { path: '**', component: description_component_1.DescriptionComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,8 +31,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, form_module_module_1.FormModule],
-        declarations: [app_component_1.AppComponent, contents_component_1.ContentComponent, description_component_1.DescriptionComponent, add_content_component_1.addContentComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, form_module_module_1.FormModule, router_1.RouterModule.forRoot(routes)],
+        declarations: [app_component_1.AppComponent, contents_component_1.ContentComponent, description_component_1.DescriptionComponent, add_content_component_1.addContentComponent, navbar_component_1.NavbarComponent],
         bootstrap: [app_component_1.AppComponent] //that will start initially
     })
 ], AppModule);

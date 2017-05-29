@@ -17,7 +17,7 @@ var addContentComponent = (function () {
     addContentComponent.prototype.submit = function () {
         this.add = this.content;
         this.AddContent.emit(this.add);
-        //this.content = '';
+        this.content = '';
     };
     return addContentComponent;
 }());

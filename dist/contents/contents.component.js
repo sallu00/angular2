@@ -32,7 +32,6 @@ ContentComponent = __decorate([
         selector: 'contents',
         templateUrl: "./app/contents/contents.component.html",
         styleUrls: ['./app/contents/contents.component.css'],
-        encapsulation: core_1.ViewEncapsulation.None
     })
 ], ContentComponent);
 exports.ContentComponent = ContentComponent;

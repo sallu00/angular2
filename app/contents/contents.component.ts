@@ -5,7 +5,7 @@ import { Component , Input , Output , EventEmitter , ViewEncapsulation } from '@
     templateUrl: "./app/contents/contents.component.html" , // give address according to the index.html file 
     styleUrls : ['./app/contents/contents.component.css'] ,
 
-    encapsulation: ViewEncapsulation.None
+    //encapsulation: ViewEncapsulation.None
 })
 
 export class ContentComponent {
